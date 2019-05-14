@@ -4,8 +4,9 @@ def consolidate_cart(cart)
   # code here
   hCart = {}
   unqCart = cart.uniq
-  unqCart.each{|uitem| uitem[uitem.keys.join]=uitem[uitem.keys.join].merge({:count => cart.collect{|item| item==uitem ? item : nil}.compact.length.to_i})} #Getting the count
-  unqCart.each{|toHash| hCart=hCart.merge(toHash)}
+  unqCart.each{|uitem| uitem[uitem.keys.join]=uitem[uitem.keys.join].merge({:count => cart.collect{|item| item==uitem ? item : nil}.compact.length.to_i})}
+  #Getting the count
+  unqCart.each{|toHash| hCart=hCart.merge(toHash)}huu78788
   hCart
 end
 
